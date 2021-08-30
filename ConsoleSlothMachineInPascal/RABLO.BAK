@@ -1,0 +1,43 @@
+program felkaru_rablo;
+uses crt;
+var firstFruit:integer;
+secondFruit:integer;
+thirdFruit:integer;
+money:integer;
+input:string;
+begin
+textbackground(10);
+textcolor(black);
+money:=500;
+repeat
+randomize;
+clrscr;
+firstFruit:=random(3)+1;
+gotoxy(20,12);
+if firstFruit=1 then writeln('alma');
+else if firstFruit=2 then writeln('szilva');
+else if firstFruit=3 then writeln('cseresznye');
+secondFruit:=random(3)+1;
+gotoxy(35,12);
+if secondFruit=1 then writeln('alma');
+else if secondFruit=2 then writeln('szilva');
+else if secondFruit=3 then writeln('cseresznye');
+thirdFruit:=random(3)+1;
+gotoxy(50,12);
+if thirdFruit=1 then writeln('alma');
+else if thirdFruit=2 then writeln('szilva');
+else if thirdFruit=3 then writeln('cseresznye');
+gotoxy(35,20);
+money:=money-30;
+writeln(money);
+gotoxy(35,25);
+if (firstFruit=secondFruit) and (secondFruit=thirdFruit) then
+  begin
+  writeln('nyert‚l!');
+  money:=money+100;
+  end;
+if money=0 then writeln('vesztett‚l!');
+
+readln(input);
+until (input='q') or (money=0);
+end.
